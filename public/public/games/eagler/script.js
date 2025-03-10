@@ -1,6 +1,6 @@
 const themes = {    
     starfall: "/games/eagler/resources/backgrounds/starfall.gif",
-    overworld: "/games/eagler/resources/backgrounds/overworld.gif",
+    overworld: "/games/eagler/resources/backgrounds/starfall.gif",
     nether: "/games/eagler/resources/backgrounds/nether.gif",
     end: "/games/eagler/resources/backgrounds/end.gif",
     cherryblossom: "/games/eagler/resources/backgrounds/cherryblossom.gif",
