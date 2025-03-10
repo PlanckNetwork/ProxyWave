@@ -30,10 +30,7 @@ jobs:
       - name: Install Dependencies in Public Folder
         run: npm install
         working-directory: ./public
-
-      - name: Build Project
-        run: npm run build
-
+        
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
