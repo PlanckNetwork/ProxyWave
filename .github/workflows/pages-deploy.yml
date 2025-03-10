@@ -28,8 +28,7 @@ jobs:
         run: npm install
 
       - name: Install Dependencies in Public Folder
-        run: npm install
-        working-directory: ./public
+        run: npm install ./public
         
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
