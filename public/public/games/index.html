@@ -21,7 +21,7 @@
     <script src="/index.js" defer></script>
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <div class="nav-links">
         <a href="/">Proxywave</a>
         <a href="/games/">Games</a>
@@ -124,21 +124,62 @@
             </button>
           </li>
           <li>
-            <button
-              class="game-button featured"
-              onclick="searchURL('https://smashkarts.io')"
-            >
+            <button class="game-button featured" onclick="openSmash()">
               Smash Karts
             </button>
           </li>
         </ul>
       </section>
-
     </main>
     <footer>
       <p>&copy; Planck Network</p>
     </footer>
     <iframe style="display: none" id="uv-frame"></iframe>
-
   </body>
+  <script>
+    function openSmash() {
+      window.href = "https://skunblocked.com";
+      history.pushState(null, null, "/smashkart");
+
+      var navbar = document.getElementById("navbar");
+      if (navbar) {
+        navbar.classList.add("hidden");
+      }
+
+      var gameList = document.getElementById("game-list");
+      if (gameList) {
+        gameList.classList.add("hidden");
+      }
+
+      var url = "https://skunblocked.com";
+
+      var embed = document.createElement("embed");
+      embed.style.width = "100vw";
+      embed.style.height = "100vh";
+      embed.style.margin = "0";
+      embed.style.overflow = "hidden";
+      embed.style.top = "0";
+      embed.style.left = "0";
+      embed.style.position = "absolute";
+      embed.src = url;
+
+      document.body.appendChild(embed);
+
+      window.addEventListener("keydown", function (event) {
+        if (event.key === " " || event.keyCode === 32) {
+          event.preventDefault();
+        }
+      });
+
+      document.body.addEventListener("keydown", function (event) {
+        if (
+          (event.key === " " || event.keyCode === 32) &&
+          event.target.tagName !== "TEXTAREA" &&
+          event.target.tagName !== "INPUT"
+        ) {
+          event.preventDefault();
+        }
+      });
+    }
+  </script>
 </html>
