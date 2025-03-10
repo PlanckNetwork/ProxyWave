@@ -1,18 +1,18 @@
 const themes = {    
-    starfall: "resources/backgrounds/starfall.gif",
-    overworld: "resources/backgrounds/overworld.gif",
-    nether: "resources/backgrounds/nether.gif",
-    end: "resources/backgrounds/end.gif",
-    cherryblossom: "resources/backgrounds/cherryblossom.gif",
-    city: "resources/backgrounds/city.gif",
-    colosseum: "resources/backgrounds/colosseum.gif",
-    cyberpunk: "resources/backgrounds/cyberpunk.gif",
-    office: "resources/backgrounds/office.gif",
-    snowstorm: "resources/backgrounds/snowstorm.gif",
-    room: "resources/backgrounds/room.gif",
-    retro: "resources/backgrounds/retro.gif",
-    redmoon: "resources/backgrounds/redmoon.gif",
-  };
+    starfall: "/games/eagler/resources/backgrounds/starfall.gif",
+    overworld: "/games/eagler/resources/backgrounds/overworld.gif",
+    nether: "/games/eagler/resources/backgrounds/nether.gif",
+    end: "/games/eagler/resources/backgrounds/end.gif",
+    cherryblossom: "/games/eagler/resources/backgrounds/cherryblossom.gif",
+    city: "/games/eagler/resources/backgrounds/city.gif",
+    colosseum: "/games/eagler/resources/backgrounds/colosseum.gif",
+    cyberpunk: "/games/eagler/resources/backgrounds/cyberpunk.gif",
+    office: "/games/eagler/resources/backgrounds/office.gif",
+    snowstorm: "/games/eagler/resources/backgrounds/snowstorm.gif",
+    room: "/games/eagler/resources/backgrounds/room.gif",
+    retro: "/games/eagler/resources/backgrounds/retro.gif",
+    redmoon: "/games/eagler/resources/backgrounds/redmoon.gif",
+  };  
   
   document.addEventListener('DOMContentLoaded', () => {
     const selectedTheme = getCookie('theme') || 'overworld';
@@ -52,7 +52,7 @@ const themes = {
   
   function launchGame() {
     const version = document.getElementById('version-home').value;
-    window.location.href = `versions/${version}`;
+    window.location.href = `versions/${version}/index.html`;
   }
   
   function setCookie(name, value, days) {
