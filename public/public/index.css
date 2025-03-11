@@ -4,7 +4,7 @@
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #121212, #1e1e1e);
+   background: linear-gradient(135deg, #ffffff 0%, #212121 50%, #1c1c1c 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,35 +147,63 @@ footer a:hover {
   text-align: center;
 }
 
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 1s ease-in;
+  position: absolute;  /* Absolute positioning */
+  top: 50%;  /* Vertically center */
+  left: 50%;  /* Horizontally center */
+  transform: translate(-50%, -50%); /* Adjust to perfectly center */
+  z-index: 10; /* Ensure it's in front */
+}
+
+/* Style for the input field */
 #uv-address {
-  background: rgba(255, 255, 255, 0.1);
+  background: #2f2f2f;
+  font-size: inherit;
+  color: inherit;
   font-family: inherit;
-  padding: 14px 24px;
-  height: 60px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: #e0e0e0;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 40px;
+  border: none;
   outline: none;
-  width: 400px;
-  margin-top: 10px;
-  transition: all 0.3s;
-  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-radius: 16px;
+  width: 42rem; /* Adjust width */
+  max-width: calc(100% - 2rem);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.5s ease-in-out;
   text-align: center;
+  margin: auto;
 }
 
+/* Placeholder style */
 #uv-address::placeholder {
-  color: rgba(224, 224, 224, 0.7);
-  font-weight: 300;
-  font-size: 18px;
+  color: #b0b0b0;
+  transition: color 0.3s ease-in-out;
 }
 
+/* Focus state for the input */
 #uv-address:focus {
-  border: 2px solid #1a73e8;
-  border-radius: 12px;
+  background-color: #3e3e3e;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  transform: scale(1.07);
 }
 
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    
 .credit {
   border-radius: 12px;
   padding: 12px;
