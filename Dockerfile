@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:20.18.1-alpine
 
 ENV NODE_ENV=production
 ARG NPM_BUILD="npm install --omit=dev"
@@ -12,6 +12,8 @@ WORKDIR /app
 
 COPY ["package.json", "package-lock.json", "./"]
 RUN apk add --upgrade --no-cache python3 make g++
+RUN npm install
+RUN npm install ./public
 RUN $NPM_BUILD
 
 COPY . .
