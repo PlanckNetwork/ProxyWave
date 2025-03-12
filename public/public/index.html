@@ -32,16 +32,15 @@
         <button class="logo home">
             <img src="./resources/home (1).png" alt="Home" class="icon">
         </button>
-    </a>    
-          <a href="/games/">
-            <button class="logo games">
-                <img src="./resources/console (1).png" alt="Games" class="icon">
-            </button>
-        </a>        
-          <button class="logo settings">
-              <img src="./resources/setting.png" alt="Settings" class="icon">
-          </button>
-      </div>
+      </a>    
+      <a href="/games/">
+        <button class="logo games">
+            <img src="./resources/console (1).png" alt="Games" class="icon">
+        </button>
+      </a>        
+      <button class="logo settings">
+          <img src="./resources/setting.png" alt="Settings" class="icon">
+      </button>
     </nav>
 
     <div title="Logo" class="flex-center logo-wrapper header-center">
@@ -56,24 +55,38 @@
       />
       <input id="uv-address" type="text" placeholder="Search the web freely" />
     </form>
+    
     <div class="desc left-margin">
       <p id="uv-error"></p>
       <pre id="uv-error-code"></pre>
     </div>
+
     <footer>
       <div>
-        <a
-          title="The PlanckNetwork GitHub organization"
-          href="https://github.com/plancknetwork"
-          >Planck</a
-        >
-        <a
-          title="The official deployment repository for Ultraviolet"
-          href="https://github.com/titaniumnetwork-dev/Ultraviolet-App"
-          >GitHub</a
-        >
+        <a title="The PlanckNetwork GitHub organization" href="https://github.com/plancknetwork">Planck</a>
+        <a title="The official deployment repository for Ultraviolet" href="https://github.com/titaniumnetwork-dev/Ultraviolet-App">GitHub</a>
       </div>
     </footer>
+
     <iframe style="display: none" id="uv-frame"></iframe>
+
+    <button id="close-btn" style="display: none; position: fixed; top: 10px; right: 10px;" onclick="window.location.href='/'">X</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const iframe = document.getElementById("uv-frame");
+          const closeBtn = document.getElementById("close-btn");
+
+          const observer = new MutationObserver(() => {
+              if (iframe.style.display !== "none") {
+                  closeBtn.style.display = "block"; 
+              } else {
+                  closeBtn.style.display = "none"; 
+              }
+          });
+
+          observer.observe(iframe, { attributes: true, attributeFilter: ["style"] });
+      });
+    </script>
   </body>
 </html>
