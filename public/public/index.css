@@ -13,6 +13,10 @@ body {
   transition: background 0.5s ease, color 0.5s ease;
 }
 
+body, button, a, * {
+  cursor: url('./resources/vertopal.com_pointer.png'), auto;
+}
+
 .hidden {
   top: -60px;
   transition: top 0.3s ease;
