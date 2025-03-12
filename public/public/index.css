@@ -4,7 +4,7 @@
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   margin: 0;
-   background: linear-gradient(135deg, #ffffff 0%, #212121 50%, #1c1c1c 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #212121 50%, #1c1c1c 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +21,13 @@ body {
 .flex-center {
   display: flex;
   justify-content: center;
+}
+
+.flex-center.logo-wrapper.header-center {
+  opacity: 0;
+  pointer-events: none;
+  width: 200px;
+  height: 400px;
 }
 
 .header-center {
@@ -114,7 +121,7 @@ footer {
   color: #bdbdbd;
 }
 
-footer > div {
+footer>div {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -153,11 +160,16 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   animation: fade-in 1s ease-in;
-  position: absolute;  /* Absolute positioning */
-  top: 50%;  /* Vertically center */
-  left: 50%;  /* Horizontally center */
-  transform: translate(-50%, -50%); /* Adjust to perfectly center */
-  z-index: 10; /* Ensure it's in front */
+  position: absolute;
+  /* Absolute positioning */
+  top: 50%;
+  /* Vertically center */
+  left: 50%;
+  /* Horizontally center */
+  transform: translate(-50%, -50%);
+  /* Adjust to perfectly center */
+  z-index: 10;
+  /* Ensure it's in front */
 }
 
 /* Style for the input field */
@@ -170,7 +182,8 @@ footer a:hover {
   outline: none;
   padding: 15px 20px;
   border-radius: 16px;
-  width: 42rem; /* Adjust width */
+  width: 42rem;
+  /* Adjust width */
   max-width: calc(100% - 2rem);
   opacity: 1;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -198,12 +211,13 @@ footer a:hover {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-    
+
 .credit {
   border-radius: 12px;
   padding: 12px;
@@ -238,10 +252,10 @@ footer a:hover {
   cursor: pointer;
 }
 
-.credit input:checked + label::after {
+.credit input:checked+label::after {
   content: "hide license";
 }
 
-.credit input:checked ~ pre {
+.credit input:checked~pre {
   display: block;
 }

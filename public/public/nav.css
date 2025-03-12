@@ -1,34 +1,50 @@
+/* Updated Navbar styles */
 .navbar {
   position: absolute;
   top: 20px;
   display: flex;
   gap: 20px;
   background-color: #2e2e2e;
-  padding: 10px 20px;
+  padding: 0 20px; /* Remove top and bottom padding */
   border-radius: 30px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease-in-out;
-  animation: float-bounce 2s ease-in-out infinite; 
+  animation: float-bounce 2s ease-in-out infinite;
+  justify-content: center; /* Centers the buttons horizontally */
+  align-items: center; /* Ensures vertical alignment */
+  height: 60px; /* Set a fixed height to ensure even spacing */
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 5px 15px;
-  font-size: 14px;
-  transition: color 0.3s, transform 0.3s, background-color 0.3s;
-  border-radius: 20px; /* Ensures a curved shape */
+.navbar:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
 }
 
-.navbar a:hover {
-  background-color: #616161;
-  transform: scale(1.1); /* Slight scaling effect */
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); 
-  border-radius: 20px; /* Creates the curved rectangle effect */
-}
-
+/* Button styles */
 .navbar .logo {
-  font-size: 18px;
-  font-weight: bold;
+  background-color: #424242;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease-in-out;
+  animation: float-bounce 2s ease-in-out infinite;
+  margin-top: 19px; /* Adjust this value to move buttons down slightly */
+}
+
+.navbar .logo img {
+  width: 25px;  /* Adjust the logo size to fit inside the button */
+  height: 25px; /* Ensure the logo maintains a square shape */
+  filter: invert(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar .logo:hover {
+  background-color: #616161;
+  transform: scale(1.2) rotate(-15deg);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
 }
