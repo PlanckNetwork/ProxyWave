@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Google</title>
+    <link rel="shortcut icon" type="image/x-icon" href="resources/google_logo.ico" />
+    <meta name="googlebot" content="index, follow, snippet" />
+
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/nav.css" />
+    <link rel="stylesheet" href="./setting.css" />
+
+    <script src="baremux/index.js" defer></script>
+    <script src="epoxy/index.js" defer></script>
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/">
+            <button class="logo home">
+                <img src="/resources/home (1).png" alt="Home" class="icon">
+            </button>
+        </a>
+        <a href="/games/">
+            <button class="logo games">
+                <img src="/resources/console (1).png" alt="Games" class="icon">
+            </button>
+        </a>
+        <a href="/settings/">     
+            <button class="logo settings">
+                <img src="/resources/setting.png" alt="Settings" class="icon">
+            </button>
+        </a>
+    </nav>
+
+    <div class="settings-container">
+        <div class="setting-card">
+            <div class="setting-title">About:Blank</div>
+            <p>Cloak the site in an about:blank page and toggle about:blank on startup.</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <button class="game-button">Open Popout</button>
+        </div>
+
+        <div class="setting-card">
+            <div class="setting-title">Set Panic Key</div>
+            <p>Quick open another site with one press. Separate multiple keystrokes with commas.</p>
+            <input type="text" class="input-field" placeholder="A,B,C">
+            <input type="text" class="input-field" placeholder="https://example.com">
+            <button class="game-button">Save</button>
+        </div>
+
+        <div class="setting-card">
+            <div class="setting-title">Tab Cloaker</div>
+            <p>Change the title and icon of the page.</p>
+            <input type="text" class="input-field" placeholder="New Tab Title">
+            <button class="game-button">Save</button>
+            <button class="game-button featured">Reset Cloak</button>
+        </div>
+
+        <div class="setting-card">
+            <div class="setting-title">Set Background Image</div>
+            <p>Change the site's background image.</p>
+            <input type="text" class="input-field" placeholder="Enter image URL">
+            <button class="game-button">Save</button>
+            <button class="game-button featured">Reset</button>
+        </div>
+
+        <div class="setting-card">
+            <div class="setting-title">Search Engine</div>
+            <p>Change the search engine when searching.</p>
+            <select class="input-field">
+                <option>Google (Default)</option>
+                <option>Bing</option>
+                <option>DuckDuckGo</option>
+            </select>
+            <button class="game-button">Save</button>
+        </div>
+
+        <div class="setting-card">
+            <div class="setting-title">Particles</div>
+            <p>Add the particles that are from the previous version to the new site.</p>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <script src="./settings.js"></script>
+</body>
+</html>
