@@ -42,12 +42,12 @@ We welcome contributions. To contribute:
 
 Thank you to all the contributors who help improve ProxyWave.
 
-[![Contributors](https://img.shields.io/github/contributors/your-repo/ProxyWave?style=for-the-badge)](https://github.com/your-repo/ProxyWave/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/PlanckNetwork/ProxyWave?style=for-the-badge)](https://github.com/PlanckNetwork/ProxyWave/graphs/contributors)
 
 ## Support
 If you find ProxyWave useful, consider giving it a star on GitHub.
 
-[![Star on GitHub](https://img.shields.io/github/stars/your-repo/ProxyWave?style=social)](https://github.com/your-repo/ProxyWave)
+[![Star on GitHub](https://img.shields.io/github/stars/PlanckNetwork/ProxyWave?style=social)](https://github.com/PlanckNetwork/ProxyWave)
 
 ---
 
