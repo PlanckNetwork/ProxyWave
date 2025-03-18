@@ -51,5 +51,5 @@ If you find ProxyWave useful, consider giving it a star on GitHub.
 
 ---
 
-ProxyWave Development Team
+ With Love ProxyWave Development Team
 
