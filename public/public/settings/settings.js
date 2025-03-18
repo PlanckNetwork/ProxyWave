@@ -25,3 +25,14 @@
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const searchEngine = localStorage.getItem("searchEngine") || "google";  
+  const selectElement = document.getElementById("search-engine-selector");
+  selectElement.value = searchEngine;  
+});
+
+
+document.getElementById("search-engine-selector").addEventListener("change", function() {
+  localStorage.setItem("searchEngine", this.value);  
+});
