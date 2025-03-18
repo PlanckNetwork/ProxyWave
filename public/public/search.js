@@ -1,32 +1,40 @@
 "use strict";
+
 /**
+ * Constructs a search URL based on user input and the selected search engine.
  *
- * @param {string} input
- * @param {string} template Template for a search query.
- * @returns {string} Fully qualified URL
+ * @param {string} input - The user's search query.
+ * @returns {string} - Fully qualified URL.
  */
-function search(input, template) {
-  try {
-    // input is a valid URL:
-    // eg: https://example.com, https://example.com/test?q=param
-    return new URL(input).toString();
-  } catch (err) {
-    // input was not a valid URL
-  }
+function search(input) {
+    // Define allowed search engines
+    const searchEngines = {
+        "google": "https://www.google.com/search?q=%s",
+        "bing": "https://www.bing.com/search?q=%s",
+        "duckduckgo": "https://duckduckgo.com/?q=%s"
+    };
 
-  try {
-    // input is a valid URL when http:// is added to the start:
-    // eg: example.com, https://example.com/test?q=param
-    const url = new URL(`http://${input}`);
-    // only if the hostname has a TLD/subdomain
-    if (url.hostname.includes(".")) return url.toString();
-  } catch (err) {
-    // input was not valid URL
-  }
+    // Retrieve the selected search engine from localStorage
+    const selectedEngine = localStorage.getItem("searchEngine") || "google";
 
-  // input may have been a valid URL, however the hostname was invalid
+    // Ensure the selected engine is valid, otherwise default to Google
+    const template = searchEngines[selectedEngine] || searchEngines["google"];
 
-  // Attempts to convert the input to a fully qualified URL have failed
-  // Treat the input as a search query
-  return template.replace("%s", encodeURIComponent(input));
+    try {
+        // Check if input is already a valid URL
+        return new URL(input).toString();
+    } catch (err) {
+        // Not a valid URL, proceed to check if adding 'http://' makes it valid
+    }
+
+    try {
+        // Check if input is a valid URL when prefixed with 'http://'
+        const url = new URL(`http://${input}`);
+        if (url.hostname.includes(".")) return url.toString();
+    } catch (err) {
+        // Not a valid URL, treat as a search query
+    }
+
+    // If input is not a URL, perform a search with the selected engine
+    return template.replace("%s", encodeURIComponent(input));
 }
