@@ -18,6 +18,7 @@
     <script src="register-sw.js" defer></script>
     <script src="search.js" defer></script>
     <script src="index.js" defer></script>
+    <script src="settings.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -76,13 +77,15 @@
         <div class="setting-card">
             <div class="setting-title">Search Engine</div>
             <p>Change the search engine when searching.</p>
-            <select class="input-field">
-                <option>Google (Default)</option>
-                <option>Bing</option>
-                <option>DuckDuckGo</option>
+            <select class="input-field" id="search-engine-selector">
+                <option value="https://www.google.com/search?q=%s">Google (Default)</option>
+                <option value="https://www.bing.com/search?q=%s">Bing</option>
+                <option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
             </select>
             <button class="game-button">Save</button>
         </div>
+    </div>
+
     <script src="./settings.js"></script>
 </body>
 </html>
