@@ -1,19 +1,17 @@
 import { createServer } from "node:http";
-import { join } from "node:path";
 import { hostname } from "node:os";
 import wisp from "wisp-server-node";
 import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 
-// static paths
 import { publicPath } from "ultraviolet-static";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 
 const fastify = Fastify({
-	serverFactory: (handler) => {
-		return createServer()
+	serverFactory: (handler) =>
+		createServer()
 			.on("request", (req, res) => {
 				res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
 				res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
@@ -22,8 +20,7 @@ const fastify = Fastify({
 			.on("upgrade", (req, socket, head) => {
 				if (req.url.endsWith("/wisp/")) wisp.routeRequest(req, socket, head);
 				else socket.end();
-			});
-	},
+			}),
 });
 
 fastify.register(fastifyStatic, {
@@ -55,10 +52,7 @@ fastify.register(fastifyStatic, {
 
 fastify.server.on("listening", () => {
 	const address = fastify.server.address();
-
-	// by default we are listening on 0.0.0.0 (every interface)
-	// we just need to list a few
-	console.log("Proxywave is istening on:");
+	console.log("ProxyWave is listening on:");
 	console.log(`\thttp://localhost:${address.port}`);
 	console.log(`\thttp://${hostname()}:${address.port}`);
 	console.log(
@@ -72,16 +66,9 @@ process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 
 function shutdown() {
-	console.log("SIGTERM signal received: closing HTTP server");
-	fastify.close();
-	process.exit(0);
+	console.log("Termination signal received: closing HTTP server");
+	fastify.close(() => process.exit(0));
 }
 
-let port = parseInt(process.env.PORT || "");
-
-if (isNaN(port)) port = 8080;
-
-fastify.listen({
-	port: port,
-	host: "0.0.0.0",
-});
+const port = parseInt(process.env.PORT || "8080", 10);
+fastify.listen({ port, host: "0.0.0.0" });
