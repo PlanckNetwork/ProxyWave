@@ -1,96 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google</title>
-    <link rel="shortcut icon" type="image/x-icon" href="resources/google_logo.ico" />
-    <meta name="googlebot" content="index, follow, snippet" />
-
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/setting.css" />
-
-    <script src="baremux/index.js" defer></script>
-    <script src="epoxy/index.js" defer></script>
-    <script src="uv/uv.bundle.js" defer></script>
-    <script src="uv/uv.config.js" defer></script>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/resources/google_logo.ico"
+    />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="/baremux/index.js" defer></script>
+    <script src="/epoxy/index.js" defer></script>
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
     <script src="js/register-sw.js" defer></script>
     <script src="js/search.js" defer></script>
     <script src="js/index.js" defer></script>
     <script src="js/settings.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <a href="/">
-            <button class="logo home">
-                <img src="/resources/home (1).png" alt="Home" class="icon">
-            </button>
-        </a>
-        <a href="games.html">
+      <a href="/">
+        <button class="logo home">
+            <img src="/resources/home (1).png" alt="Home" class="icon">
+        </button>
+    </a>    
+          <a href="games.html">
             <button class="logo games">
                 <img src="/resources/console (1).png" alt="Games" class="icon">
             </button>
-        </a>
+        </a>    
         <a href="exploit.html">
             <button class="logo exploit">
                 <img src="/resources/exploit.png" alt="Exploit" class="icon">
             </button>
-        </a>   
-        <a href="settings.html">     
-            <button class="logo settings">
-                <img src="/resources/setting.png" alt="Settings" class="icon">
-            </button>
-        </a>
+        </a>     
+        <a href="settings.html">  
+          <button class="logo settings">
+              <img src="/resources/setting.png" alt="Settings" class="icon">
+          </button>
+        </a> 
+      </div>
     </nav>
-
-    <div class="settings-container">
-        <div class="setting-card">
-            <div class="setting-title">About:Blank</div>
-            <p>Cloak the site in an about:blank page and toggle about:blank on startup.</p>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <button class="game-button">Open Popout</button>
-        </div>
-
-        <div class="setting-card">
-            <div class="setting-title">Set Panic Key</div>
-            <p>Quick open another site with one press. Separate multiple keystrokes with commas.</p>
-            <input type="text" class="input-field" placeholder="A,B,C">
-            <input type="text" class="input-field" placeholder="https://example.com">
-            <button class="game-button">Save</button>
-        </div>
-
-        <div class="setting-card">
-            <div class="setting-title">Tab Cloaker</div>
-            <p>Change the title and icon of the page.</p>
-            <input type="text" class="input-field" placeholder="New Tab Title">
-            <button class="game-button">Save</button>
-            <button class="game-button featured">Reset Cloak</button>
-        </div>
-
-        <div class="setting-card">
-            <div class="setting-title">Set Background Image</div>
-            <p>Change the site's background image.</p>
-            <input type="text" class="input-field" placeholder="Enter image URL">
-            <button class="game-button">Save</button>
-            <button class="game-button featured">Reset</button>
-        </div>
-
-        <div class="setting-card">
-            <div class="setting-title">Search Engine</div>
-            <p>Change the search engine when searching.</p>
-            <select class="input-field" id="search-engine-selector">
-                <option value="google">Google (Default)</option>
-                <option value="bing">Bing</option>
-                <option value="duckduckgo">DuckDuckGo</option>
-            </select>
-            <button class="game-button">Save</button>
-        </div>
-    </div>
-
-    <script src="./settings.js"></script>
-</body>
+    <header>
+      <h1>Exploits</h1>
+    </header>
+    <main>
+        <button class="exploit-btn" onclick="window.location.href='exploit/hippo.html'">HippoSite (Advanced)</button>
+    </main>
+    <footer>
+      <p>&copy; Planck Network</p>
+    </footer>
+    <iframe style="display: none" id="uv-frame"></iframe>
+  </body>
+  
 </html>
